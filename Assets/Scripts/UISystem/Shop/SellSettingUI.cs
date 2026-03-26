@@ -9,6 +9,8 @@ public class SellSettingUI : MonoBehaviour
     public MonoBehaviour ThirdPersonCamera;
     public MonoBehaviour PlayerController;
     bool isOpen = false;
+    bool isInTriggerShop;
+    bool isPress;
     void Start()
     {
         interractAction = InputSystem.actions.FindAction("Interact");
@@ -17,7 +19,11 @@ public class SellSettingUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        isPress = interractAction.WasPressedThisFrame();
+        if(isPress && isInTriggerShop)
+        {
+            ToggleSetting();
+        }
     }
     void ToggleSetting()
     {
@@ -39,16 +45,12 @@ public class SellSettingUI : MonoBehaviour
             Cursor.visible = false;
         }
     }
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             IsSellPanel.SetActive(true);
-            bool isHideSellUi = interractAction.WasPressedThisFrame();
-            if (isHideSellUi)
-            {
-                ToggleSetting();
-            }
+            isInTriggerShop = true;
         }
     }
     void OnTriggerExit(Collider other)
@@ -56,6 +58,7 @@ public class SellSettingUI : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             IsSellPanel.SetActive(false);
+            isInTriggerShop = false;
         }
     }
 }

@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -34,6 +33,9 @@ public class ThridCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.isPaused)
+        return;
+
         Debug.Log(zoom.y);
         Look();
         Zoom();
