@@ -8,7 +8,7 @@ public class MainMenuManager : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene(gameSceneIndex);
-        GameManager.Instance.ResumeGame();
+        GameManager.Instance.ResumeGame(gameObject);
     }
     public void QuitGame()
     {

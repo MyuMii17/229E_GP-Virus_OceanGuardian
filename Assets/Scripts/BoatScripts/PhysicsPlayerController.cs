@@ -5,7 +5,7 @@ public class PhysicsPlayerController : MonoBehaviour
 {
     public float drag = 50f;
     public float angularDrag = 0.001f;
-    public float yawPower = 50f;
+    public float yawPower = 100f;
     private float currenSpeed = 0.0f;
     private float boatDeceleration = 5f;
     private float boatAcceleration = 20f;
@@ -96,9 +96,14 @@ public class PhysicsPlayerController : MonoBehaviour
             boatcurrentTilt -= 360;    
         }
 
-        if(verticalInput != 0)
+        if(verticalInput > 0)
         {
             rb.AddTorque(horizontalInput * yawPower * transform.up);
+            targetTilt = -horizontalInput * boatMaxTilt;
+        }
+        if(verticalInput < 0)
+        {
+            rb.AddTorque(-horizontalInput * yawPower * transform.up);
             targetTilt = -horizontalInput * boatMaxTilt;
         }
 

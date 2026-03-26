@@ -5,11 +5,17 @@ using UnityEngine.InputSystem;
 public class MainInventory : MonoBehaviour
 {
     public int maxSlot = 9;
+    public float currentMoney = 0;
+    public float maxMoney = 1000;
     public List<ItemData> items = new();
     [SerializeField] private GameObject InvPanel;
     public MonoBehaviour ThirdPersonCamera;
     private bool isCanUse = false;
     public void Awake()
+    {
+        AddNull();
+    }
+    public void AddNull()
     {
         items = new List<ItemData>(maxSlot);
         for(int i = 0; i < maxSlot; i++)
@@ -17,9 +23,14 @@ public class MainInventory : MonoBehaviour
             items.Add(null);
         }
     }
-    public void Start()
+    public void IncreaseSlot(int amount)
     {
-        
+        maxSlot += amount;
+
+        for(int i = 0; i < amount; i++)
+        {
+            items.Add(null);
+        }
     }
     public void Update()
     {
@@ -85,6 +96,11 @@ public class MainInventory : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+    }
+    public void Money(float sellAmount)
+    {
+        currentMoney = Mathf.Clamp(currentMoney, 0, maxMoney);
+        currentMoney += sellAmount;
     }
 
 }

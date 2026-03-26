@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.Serialization;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FuelSystem : MonoBehaviour
@@ -8,6 +9,7 @@ public class FuelSystem : MonoBehaviour
     public float currentFuel = 0.0f;
     public float consumeRate = 5f;
     [SerializeField]private PhysicsPlayerController playerController;
+    [SerializeField]private FuelBar fuelBar;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,6 +19,7 @@ public class FuelSystem : MonoBehaviour
     void Update()
     {
         Consume(consumeRate);
+        fuelBar.SetFuel(currentFuel,maxFuel);
     }
     public void Consume(float amount)
     {

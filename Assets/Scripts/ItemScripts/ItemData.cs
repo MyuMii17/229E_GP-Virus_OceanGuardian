@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public enum ItemType
 {
@@ -14,16 +13,13 @@ public class ItemData : ScriptableObject
     public Sprite icon;
     public ItemType itemType;
     public GameObject worldPreFeb;
-    public float price;
+    public int minPrice;
+    public int maxPrice;
+
     [TextArea]
     public string description;
     
     [Header("Equipment Setting")]
     public bool canEquip;
     public bool isItem;
-
-    void OnEnable()
-    {
-        price = Random.Range(10,30);
-    }
 }

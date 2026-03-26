@@ -24,7 +24,7 @@ public class MenuSystem : MonoBehaviour
 
     public void ToggleMenu()
     {
-        menuUI.SetActive(true);
-        GameManager.Instance.PauseGame();
+        GameManager.Instance.SetOffOpenUI();
+        GameManager.Instance.PauseGame(menuUI);
     }
 }

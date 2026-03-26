@@ -36,7 +36,6 @@ public class ThridCamera : MonoBehaviour
         if (GameManager.Instance.isPaused)
         return;
 
-        Debug.Log(zoom.y);
         Look();
         Zoom();
 
