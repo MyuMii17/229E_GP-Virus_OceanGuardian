@@ -7,6 +7,9 @@ public class ReFillUI : MonoBehaviour
     public GameObject pressToFill;
     public InputAction interactAction;
     [SerializeField]private FuelSystem fuel;
+    [SerializeField]private MainInventory inventory;
+    private int currentMoney = 0;
+    public int fuelPrice = 10;
     private bool isInTriggerRefill;
     private bool isPress;
     void Start()
@@ -15,10 +18,12 @@ public class ReFillUI : MonoBehaviour
     }
     void Update()
     {
+        currentMoney = inventory.currentMoney;
         isPress = interactAction.WasPressedThisFrame();
 
-        if (isPress && isInTriggerRefill && fuel.currentFuel != fuel.maxFuel)
+        if (isPress && isInTriggerRefill && fuel.currentFuel != fuel.maxFuel && currentMoney >= fuelPrice)
         {
+            inventory.currentMoney -= fuelPrice;
             fuel.currentFuel = fuel.maxFuel;
         }
         else if (isPress && isInTriggerRefill && fuel.currentFuel == fuel.maxFuel)
