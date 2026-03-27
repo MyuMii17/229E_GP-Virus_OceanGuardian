@@ -19,8 +19,7 @@ public class MenuManager : MonoBehaviour
     }
     public void Restart()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(gameMenuSceneIndex);
-        GameManager.Instance.SetOffOpenUI();
-        GameManager.Instance.ResumeGame(Menu);
     }
 }

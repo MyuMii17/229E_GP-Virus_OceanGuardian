@@ -5,11 +5,12 @@ using UnityEngine.InputSystem;
 public class MainInventory : MonoBehaviour
 {
     public int maxSlot = 9;
-    public float currentMoney = 0;
-    public float maxMoney = 1000;
+    public int currentMoney = 0;
+    public int maxMoney = 1000;
     public List<ItemData> items = new();
-    [SerializeField] private GameObject InvPanel;
-    public MonoBehaviour ThirdPersonCamera;
+    // [SerializeField] private GameObject invPanel;
+    [SerializeField] private GameObject winPanel;
+    // public MonoBehaviour ThirdPersonCamera;
     private bool isCanUse = false;
     public void Awake()
     {
@@ -32,12 +33,18 @@ public class MainInventory : MonoBehaviour
             items.Add(null);
         }
     }
-    public void Update()
+    void Update()
     {
-        bool isCheckClick = Keyboard.current.tabKey.wasPressedThisFrame;
-        if (isCheckClick)
+        // bool isCheckClick = Keyboard.current.tabKey.wasPressedThisFrame;
+        // if (isCheckClick)
+        // {
+        //     CursorON();
+        // }
+        if(currentMoney >= maxMoney)
         {
-            CursorON();
+            GameManager.Instance.SetOffOpenUI();
+            GameManager.Instance.PauseGame(winPanel);
+            currentMoney = 0;
         }
     }
     public bool AddCheck(ItemData item)
@@ -80,24 +87,24 @@ public class MainInventory : MonoBehaviour
         Instantiate(item.worldPreFeb, dropPosition, Quaternion.identity);
     }
 
-    private void CursorON()
-    {
-        isCanUse = !isCanUse;
+    // private void CursorON()
+    // {
+    //     isCanUse = !isCanUse;
 
-        if (isCanUse && !InvPanel.activeSelf)
-        {
-            ThirdPersonCamera.enabled = false;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-        else if(!InvPanel.activeSelf)
-        {
-            ThirdPersonCamera.enabled = true;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
-    }
-    public void Money(float sellAmount)
+    //     if (isCanUse && !InvPanel.activeSelf)
+    //     {
+    //         ThirdPersonCamera.enabled = false;
+    //         Cursor.lockState = CursorLockMode.None;
+    //         Cursor.visible = true;
+    //     }
+    //     else if(!InvPanel.activeSelf)
+    //     {
+    //         ThirdPersonCamera.enabled = true;
+    //         Cursor.lockState = CursorLockMode.Locked;
+    //         Cursor.visible = false;
+    //     }
+    // }
+    public void Money(int sellAmount)
     {
         currentMoney = Mathf.Clamp(currentMoney, 0, maxMoney);
         currentMoney += sellAmount;

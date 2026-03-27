@@ -18,6 +18,8 @@ MonoBehaviour:
   worldPreFeb: {fileID: 4153387268165328256, guid: 099da3d0fc359c8499bae7c881f560db, type: 3}
   minPrice: 10
   maxPrice: 30
+  minMass: 1
+  maxMass: 5
   description: 
   canEquip: 0
   isItem: 1

@@ -15,6 +15,8 @@ public class ItemData : ScriptableObject
     public GameObject worldPreFeb;
     public int minPrice;
     public int maxPrice;
+    public int minMass;
+    public int maxMass;
 
     [TextArea]
     public string description;

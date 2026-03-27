@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ItemPick : MonoBehaviour
+public class ItemPick: MonoBehaviour
 {
     public ItemData item;
 
@@ -16,10 +16,5 @@ public class ItemPick : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-    }
-
-    internal void OnPickItem(object inventory)
-    {
-        throw new NotImplementedException();
     }
 }

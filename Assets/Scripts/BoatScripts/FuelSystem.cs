@@ -2,6 +2,7 @@ using System;
 using System.Runtime.Serialization;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FuelSystem : MonoBehaviour
 {

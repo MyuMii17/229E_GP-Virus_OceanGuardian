@@ -15,6 +15,8 @@ public class PhysicsPlayerController : MonoBehaviour
     private float boatTiltReduce = 2f;
     private float boatMaxTilt = 10f;
     private float targetTilt = 0f;
+    private float xRange = 200f;
+    private float zRange = 200f;
 
     private Rigidbody rb; 
     private InputAction moveAction;
@@ -29,6 +31,23 @@ public class PhysicsPlayerController : MonoBehaviour
 
     void Update()
     {
+        if (transform.position.x > xRange)
+        {
+            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
+        }
+        else if (transform.position.x < -xRange)
+        {
+            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
+        }
+
+        if (transform.position.z > zRange)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, zRange);
+        }
+        else if (transform.position.z < -zRange)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -zRange);
+        }
     }
 
     void FixedUpdate()

@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class ItemGetInventory : MonoBehaviour
 {
     private MainInventory inventory;
-    [SerializeField]private ItemPrice itemPrice;
+    [SerializeField]private ItemDetail itemDetail;
     public int currentItemPrice = 0;
     
     void Start()
@@ -22,8 +22,9 @@ public class ItemGetInventory : MonoBehaviour
                 {
                     forntObject.OnPickItem(inventory);
                 }
-                itemPrice = collider.GetComponent<ItemPrice>();
-                currentItemPrice += itemPrice.currentItemPrice;
+                itemDetail = collider.GetComponent<ItemDetail>();
+                currentItemPrice += itemDetail.currentItemPrice;
+
             }
     }
 }
