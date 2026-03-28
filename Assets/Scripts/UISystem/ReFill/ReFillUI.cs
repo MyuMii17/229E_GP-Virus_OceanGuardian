@@ -8,6 +8,7 @@ public class ReFillUI : MonoBehaviour
     public InputAction interactAction;
     [SerializeField]private FuelSystem fuel;
     [SerializeField]private MainInventory inventory;
+    public AudioSource playerAudio;
     private int currentMoney = 0;
     public int fuelPrice = 10;
     private bool isInTriggerRefill;
@@ -25,6 +26,7 @@ public class ReFillUI : MonoBehaviour
         {
             inventory.currentMoney -= fuelPrice;
             fuel.currentFuel = fuel.maxFuel;
+            playerAudio.Play();
         }
         else if (isPress && isInTriggerRefill && fuel.currentFuel == fuel.maxFuel)
         {

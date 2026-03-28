@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: -7041619036160465203}
   m_Layer: 0
   m_Name: Box2
-  m_TagString: Items
+  m_TagString: fuel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -187,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemPrice
   currentItemPrice: 0
   currentItemMass: 0
+  addFuel: 0
   itemData: {fileID: 11400000, guid: cd8baf2087785624b998cf2f5c1dd0af, type: 2}
 --- !u!114 &-7754154697373122177
 MonoBehaviour:

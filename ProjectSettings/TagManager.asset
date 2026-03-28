@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Items
   - Water
+  - fuel
   layers:
   - Default
   - TransparentFX

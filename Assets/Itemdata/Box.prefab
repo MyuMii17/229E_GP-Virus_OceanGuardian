@@ -187,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemPrice
   currentItemPrice: 0
   currentItemMass: 0
+  addFuel: 0
   itemData: {fileID: 11400000, guid: 76ff6a407e8f52e4dbbf4bf02d7148a2, type: 2}
 --- !u!114 &-7754154697373122177
 MonoBehaviour:
