@@ -16,10 +16,12 @@ MonoBehaviour:
   icon: {fileID: 0}
   itemType: 0
   worldPreFeb: {fileID: 4153387268165328256, guid: 099da3d0fc359c8499bae7c881f560db, type: 3}
-  minPrice: 10
-  maxPrice: 30
+  minPrice: 0
+  maxPrice: 0
   minMass: 1
   maxMass: 5
+  minAddFuel: 10
+  maxAddFuel: 20
   description: 
   canEquip: 0
   isItem: 1
