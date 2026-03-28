@@ -9,7 +9,7 @@ public class MainInventory : MonoBehaviour
     public int maxMoney = 1000;
     public List<ItemData> items = new();
     // [SerializeField] private GameObject invPanel;
-    [SerializeField] private GameObject winPanel;
+    [SerializeField] private GameObject creditPanel;
     // public MonoBehaviour ThirdPersonCamera;
     private bool isCanUse = false;
     public void Awake()
@@ -43,7 +43,7 @@ public class MainInventory : MonoBehaviour
         if(currentMoney >= maxMoney)
         {
             GameManager.Instance.SetOffOpenUI();
-            GameManager.Instance.PauseGame(winPanel);
+            GameManager.Instance.PauseGame(creditPanel);
             currentMoney = 0;
         }
     }

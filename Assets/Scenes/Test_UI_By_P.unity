@@ -972,7 +972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833614928e680874591e961e8b3f95e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuManager
-  gameSceneIndex: 1
+  gameSceneIndex: 3
 --- !u!1001 &1700727141
 PrefabInstance:
   m_ObjectHideFlags: 0

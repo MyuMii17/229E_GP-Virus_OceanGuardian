@@ -4,11 +4,15 @@ using UnityEngine.SceneManagement;
 public class MainMenuManager : MonoBehaviour
 {
     [Header("Scene Settings")] 
-    [SerializeField] int gameSceneIndex = 1;
+    [SerializeField] int gameSceneIndex = 3;
     public void PlayGame()
     {
         SceneManager.LoadScene(gameSceneIndex);
-        GameManager.Instance.ResumeGame(gameObject);
+        Time.timeScale = 1;
+    }
+    public void CreditMenu()
+    {
+        
     }
     public void QuitGame()
     {
