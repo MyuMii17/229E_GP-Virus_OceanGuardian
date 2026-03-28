@@ -10,10 +10,6 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene(gameSceneIndex);
         Time.timeScale = 1;
     }
-    public void CreditMenu()
-    {
-        
-    }
     public void QuitGame()
     {
         Application.Quit();

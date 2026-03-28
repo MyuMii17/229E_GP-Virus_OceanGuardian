@@ -87,23 +87,6 @@ public class MainInventory : MonoBehaviour
         Instantiate(item.worldPreFeb, dropPosition, Quaternion.identity);
     }
 
-    // private void CursorON()
-    // {
-    //     isCanUse = !isCanUse;
-
-    //     if (isCanUse && !InvPanel.activeSelf)
-    //     {
-    //         ThirdPersonCamera.enabled = false;
-    //         Cursor.lockState = CursorLockMode.None;
-    //         Cursor.visible = true;
-    //     }
-    //     else if(!InvPanel.activeSelf)
-    //     {
-    //         ThirdPersonCamera.enabled = true;
-    //         Cursor.lockState = CursorLockMode.Locked;
-    //         Cursor.visible = false;
-    //     }
-    // }
     public void Money(int sellAmount)
     {
         currentMoney = Mathf.Clamp(currentMoney, 0, maxMoney);

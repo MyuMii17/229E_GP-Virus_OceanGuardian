@@ -10,7 +10,7 @@ public class FuelBar : MonoBehaviour
     [SerializeField]private GameObject RunOutOffuel;
     [SerializeField]private Image fuelbar;
     [SerializeField]private FuelSystem fuel;
-    [SerializeField] int gameMenuSceneIndex = 1;
+    [SerializeField] int gameMenuSceneIndex = 4;
     public void SetFuel(float current, float max)
     {
         fuelbar.fillAmount = current / max;

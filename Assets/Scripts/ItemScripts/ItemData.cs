@@ -17,6 +17,8 @@ public class ItemData : ScriptableObject
     public int maxPrice;
     public int minMass;
     public int maxMass;
+    public float minAddFuel;
+    public float maxAddFuel;
 
     [TextArea]
     public string description;

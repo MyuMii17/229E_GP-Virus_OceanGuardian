@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: -7754154697373122177}
   - component: {fileID: -7041619036160465203}
   m_Layer: 0
-  m_Name: Box
+  m_Name: Box2
   m_TagString: Items
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3fd2f1eb6978ebd40a69e1416e286d24, type: 2}
+  - {fileID: 2100000, guid: 55f1d56b535103b46bd7e83769bc935d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3654b078155912045929d81dd8a13039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemPick
-  item: {fileID: 11400000, guid: 76ff6a407e8f52e4dbbf4bf02d7148a2, type: 2}
+  item: {fileID: 11400000, guid: cd8baf2087785624b998cf2f5c1dd0af, type: 2}
 --- !u!114 &7065990858941510544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemPrice
   currentItemPrice: 0
   currentItemMass: 0
-  itemData: {fileID: 11400000, guid: 76ff6a407e8f52e4dbbf4bf02d7148a2, type: 2}
+  itemData: {fileID: 11400000, guid: cd8baf2087785624b998cf2f5c1dd0af, type: 2}
 --- !u!114 &-7754154697373122177
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class MenuSystem : MonoBehaviour
 {
     private bool isMenuTrigger = false;
+    [SerializeField]private GameManager gameManager;
 
     private InputAction mainmenuAction;
     public GameObject menuUI;
@@ -16,7 +17,7 @@ public class MenuSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mainmenuAction.WasPressedThisFrame())
+        if (mainmenuAction.WasPressedThisFrame()&&gameManager.isPaused != true)
         {
             ToggleMenu();
         }
